@@ -1,10 +1,13 @@
 import type { Config } from "tailwindcss";
+import animatePlugin from "tailwindcss-animate";
+import shadcnUiPlugin from "./src/libraries/tailwindcss/shadcn-ui-plugin";
 
-const config: Config = {
+const config = {
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  prefix: "",
   theme: {
     extend: {
       backgroundImage: {
@@ -14,6 +17,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
-};
+  plugins: [animatePlugin, shadcnUiPlugin],
+} satisfies Config;
+
 export default config;

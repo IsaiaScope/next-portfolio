@@ -10,6 +10,9 @@ const config = {
   prefix: "",
   theme: {
     extend: {
+      fontFamily: { 
+        recursive: ['var(--font-onest)'], // custom font from layout.tsx
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

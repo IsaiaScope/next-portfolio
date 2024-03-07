@@ -1,8 +1,25 @@
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "next/font/local";
+
+// https://fonts.google.com/variablefonts
+// https://fonts.google.com/specimen/Recursive
+const customLocalFont = localFont({
+  src: "../../public/fonts/Onest-Variable.ttf",
+  display: "swap",
+  fallback: [
+    "ui-sans-serif",
+    "system-ui",
+    "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
+  ],
+  adjustFontFallback: "Times New Roman",
+  variable: "--font-onest",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${customLocalFont.className} ${customLocalFont.variable}`}
+    >
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -24,7 +45,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-
         </ThemeProvider>
       </body>
     </html>

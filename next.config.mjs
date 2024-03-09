@@ -1,19 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // redirects: async () => {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/en',
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: '/:locale',
-  //       destination: '/en',
-  //       permanent: true,
-  //     }
-  //   ];
-  // }
-};
+const nextConfig = {};
 
 export default nextConfig;

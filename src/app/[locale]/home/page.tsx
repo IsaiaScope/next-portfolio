@@ -1,15 +1,27 @@
-'use client';
+import LanguageChanger from '@/components/ui/language-changer';
+import ServerComponent from '@/components/ui/server-componet';
+import TranslationsProvider from "@/providers/translations-provider";
+import initTranslations from "@/utils/i18n";
 
-import { useChangeLocale } from '@/locale/client';
-
-export default function Home({ params: { lang } }: { params: { lang: any } }) {
-  const changeLocale = useChangeLocale()
+export default async function Home({
+  params: { locale },
+}: {
+  params: { locale: any };
+}) {
+  const { t, resources } = await initTranslations(locale, ['common', 'home']);
+  console.log(`🧊 ~ resources: `, resources);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>HOME</div>
-      <button onClick={() => changeLocale('en')}>English</button>
-      <button onClick={() => changeLocale('it')}>French</button>
-    </main>
+    <TranslationsProvider
+      resources={resources}
+      locale={locale}
+      namespaces={['home']}
+    >
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div>{t('done')}</div>
+        <ServerComponent params={locale}/>
+        <LanguageChanger />
+      </main>
+    </TranslationsProvider>
   );
 }

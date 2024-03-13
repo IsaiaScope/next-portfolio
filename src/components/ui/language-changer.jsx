@@ -13,6 +13,10 @@ export default function LanguageChanger() {
   const handleChange = e => {
     const newLocale = e.target.value;
 
+    console.log(`🧊 ~ newLocale: `, newLocale);
+    console.log(`🧊 ~ newLocale: `, process.env.NODE_ENV);
+    console.log(`🧊 ~ newLocale: `, process.env.NEXT_PUBLIC_NODE_ENV);
+
     // set cookie for next-i18n-router
     const days = 30;
     const date = new Date();

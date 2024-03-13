@@ -3,7 +3,7 @@ import ServerComponent from '@/components/ui/server-componet';
 import TranslationsProvider from "@/providers/translations-provider";
 import initTranslations from "@/utils/i18n";
 
-export default async function Home({
+export default async function Settings({
   params: { locale },
 }: {
   params: { locale: any };

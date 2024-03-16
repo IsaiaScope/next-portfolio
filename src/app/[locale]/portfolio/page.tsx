@@ -3,7 +3,7 @@ import ServerComponent from '@/components/ui/server-componet';
 import TranslationsProvider from "@/providers/translations-provider";
 import initTranslations from "@/utils/i18n";
 
-export default async function Home({
+export default async function PortfolioPage({
   params: { locale },
 }: {
   params: { locale: any };
@@ -18,7 +18,7 @@ export default async function Home({
       namespaces={['home']}
     >
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div>{t('done')}</div>
+        <div>PortfolioPage</div>
         <ServerComponent params={locale}/>
         <LanguageChanger />
       </main>

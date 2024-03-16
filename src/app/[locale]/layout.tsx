@@ -5,7 +5,7 @@ import { dir } from 'i18next';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import i18nConfig from '../../../i18nConfig';
-import { IsoNavigationMenu } from '@/components/ui/iso-navigation-menu';
+import { MainMenu } from '@/components/ui/main-menu';
 
 // https://fonts.google.com/variablefonts (Better because includes more weights)
 // https://fonts.google.com/specimen/Onest
@@ -60,7 +60,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <IsoNavigationMenu />
+            <MainMenu />
             {children}
           </ThemeProvider>
       </body>

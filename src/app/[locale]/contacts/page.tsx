@@ -3,7 +3,7 @@ import ServerComponent from '@/components/ui/server-componet';
 import TranslationsProvider from "@/providers/translations-provider";
 import initTranslations from "@/utils/i18n";
 
-export default async function SettingsPage({
+export default async function ContactsPage({
   params: { locale },
 }: {
   params: { locale: any };
@@ -17,8 +17,8 @@ export default async function SettingsPage({
       locale={locale}
       namespaces={['home']}
     >
-      <main className="flex h-dvh min-h-screen flex-col items-center justify-between p-24">
-        <div>Settings</div>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div>Contacts</div>
         <ServerComponent params={locale}/>
         <LanguageChanger />
       </main>
